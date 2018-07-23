@@ -1,3 +1,5 @@
+/* 180722 3ë²ˆ */
+
 import java.util.Scanner;
 
 class prac0722_3 {
@@ -7,30 +9,30 @@ class prac0722_3 {
 	
 	public static void main(String[] args) {
 		
-		/* T ÀÔ·Â¹Ş´Â ºÎºĞ */
+		/* T ì…ë ¥ë°›ëŠ” ë¶€ë¶„ */
 		Scanner sc = new Scanner(System.in);
 		T = sc.nextInt();
-		result = new int[T]; //³ªÁß¿¡ ÄÉÀÌ½ºº° ¼Ö·ç¼Ç ÀúÀå¿ë ¹è¿­
+		result = new int[T]; //ë‚˜ì¤‘ì— ì¼€ì´ìŠ¤ë³„ ì†”ë£¨ì…˜ ì €ì¥ìš© ë°°ì—´
 		
 		
-		/* N°ú Å×½ºÆ® ÄÉÀÌ½º¸¦ T¹ø ÀÔ·Â¹Ş´Â ºÎºĞ */
+		/* Nê³¼ í…ŒìŠ¤íŠ¸ ì¼€ì´ìŠ¤ë¥¼ Të²ˆ ì…ë ¥ë°›ëŠ” ë¶€ë¶„ */
 		for(int iter=0; iter<T; iter++) {
 			N = sc.nextInt();
-			if (N<1 || N>10) //NÀº 10 ÀÌÇÏÀÇ ÀÚ¿¬¼öÀÌ´Ù.
+			if (N<1 || N>10) //Nì€ 10 ì´í•˜ì˜ ìì—°ìˆ˜ì´ë‹¤.
 				System.exit(0);
-			sqArr = new int[N][N]; //sqArrÀº ÁöÇüÁöµµ ÀúÀå¿ë ¹è¿­
+			sqArr = new int[N][N]; //sqArrì€ ì§€í˜•ì§€ë„ ì €ì¥ìš© ë°°ì—´
 			
-			for (int i=0; i<sqArr.length; i++) { //iter¹øÂ° Áöµµ ÀÔ·Â¹ŞÀ½
+			for (int i=0; i<sqArr.length; i++) { //iterë²ˆì§¸ ì§€ë„ ì…ë ¥ë°›ìŒ
 				for (int j=0; j<sqArr[i].length; j++) {
 					sqArr[i][j] = sc.nextInt();
 				}
 			}
 						
-			/* µµ½Ã¸¦ ¼¼¿ì±â ÀûÇÕÇÑ Àå¼ÒÀÇ °³¼ö¸¦ ÆÇº°ÇÏ´Â ºÎºĞ */
-			count=0; //count´Â iter¹øÂ° ÄÉÀÌ½º¿¡¼­ ÀûÇÕÇÑ Àå¼ÒÀÇ °¹¼ö
+			/* ë„ì‹œë¥¼ ì„¸ìš°ê¸° ì í•©í•œ ì¥ì†Œì˜ ê°œìˆ˜ë¥¼ íŒë³„í•˜ëŠ” ë¶€ë¶„ */
+			count=0; //countëŠ” iterë²ˆì§¸ ì¼€ì´ìŠ¤ì—ì„œ ì í•©í•œ ì¥ì†Œì˜ ê°¯ìˆ˜
 			for (int k=0; k<sqArr.length;k++) {
 				for (int l=0; l<sqArr[k].length; l++) {
-					if(detect(k,l)) //Á¶°Ç¿¡¼­ ´Ù »ì¾Æ³²¾Æ¾ß¸¸ count++
+					if(detect(k,l)) //ì¡°ê±´ì—ì„œ ë‹¤ ì‚´ì•„ë‚¨ì•„ì•¼ë§Œ count++
 						count++;
 				}
 			}
@@ -48,24 +50,24 @@ class prac0722_3 {
 	public static boolean hasIndex(int[] detectArr, int i) {
 		for (int e : detectArr)
 		   if (e == i) {
-			   return true;//Á¸ÀçÇÑ´Ù
+			   return true;//ì¡´ì¬í•œë‹¤
 		   }
-		return false;//Á¸ÀçÇÏÁö ¾Ê´Â´Ù
+		return false;//ì¡´ì¬í•˜ì§€ ì•ŠëŠ”ë‹¤
 	} 
 	
 	
 	
 	public static boolean detect(int a, int b) {
-		if (sqArr[a][b] == 0) {//Á¶°Ç 1. º»ÀÎÀÌ 0ÀÌ¸é ¾ÈµÈ´Ù
+		if (sqArr[a][b] == 0) {//ì¡°ê±´ 1. ë³¸ì¸ì´ 0ì´ë©´ ì•ˆëœë‹¤
 			return false;
 		}
 		
-		int n=0; //¸éÀû ³Ñ¾î°¡Áö ¾Ê´Â ¿ø¼Ò¸¸ ¼¾´Ù.
+		int n=0; //ë©´ì  ë„˜ì–´ê°€ì§€ ì•ŠëŠ” ì›ì†Œë§Œ ì„¼ë‹¤.
 		for (int i=a-1; i<a+2; i++ ) {
-			if (i<0 || i>=N) //Áöµµ¸¦ ¹ş¾î³­ ÇàÀÌ¸é ´ÙÀ½ ÇàÀ¸·Î
+			if (i<0 || i>=N) //ì§€ë„ë¥¼ ë²—ì–´ë‚œ í–‰ì´ë©´ ë‹¤ìŒ í–‰ìœ¼ë¡œ
 				continue;
 			for (int j=b-1; j<b+2; j++) {
-				if (j<0 || j>=N) //Áöµµ¸¦ ¹ş¾î³­ ¿­ÀÌ¸é ´ÙÀ½ ¿­·Î
+				if (j<0 || j>=N) //ì§€ë„ë¥¼ ë²—ì–´ë‚œ ì—´ì´ë©´ ë‹¤ìŒ ì—´ë¡œ
 					continue;
 				else
 					n++;
@@ -75,10 +77,10 @@ class prac0722_3 {
 		detectArr = new int[n];
 		int k = 0;
 		for (int i=a-1; i<a+2; i++ ) {
-			if (i<0 || i>=N) //Áöµµ¸¦ ¹ş¾î³­ ÇàÀÌ¸é ´ÙÀ½ ÇàÀ¸·Î
+			if (i<0 || i>=N) //ì§€ë„ë¥¼ ë²—ì–´ë‚œ í–‰ì´ë©´ ë‹¤ìŒ í–‰ìœ¼ë¡œ
 				continue;
 			for (int j=b-1; j<b+2; j++) {
-				if (j<0 || j>=N) //Áöµµ¸¦ ¹ş¾î³­ ¿­ÀÌ¸é ´ÙÀ½ ¿­·Î
+				if (j<0 || j>=N) //ì§€ë„ë¥¼ ë²—ì–´ë‚œ ì—´ì´ë©´ ë‹¤ìŒ ì—´ë¡œ
 					continue;
 				else {
 						detectArr[k] = sqArr[i][j];
@@ -87,10 +89,10 @@ class prac0722_3 {
 			}
 		}
 			
-		if (!hasIndex(detectArr, 0)) { //Á¶°Ç 2. ÁÖº¯¿¡ 0ÀÌ ÀÖÀ¸¸é ¾ÈµÈ´Ù.
-			if(hasIndex(detectArr, 1)) { //Á¶°Ç 3. 1ÀÌ ÇÏ³ª¶óµµ ÀÖ¾î¾ß ÇÑ´Ù.
-				if(hasIndex(detectArr, 2)) { //Á¶°Ç 4. 2°¡ ÇÏ³ª¶óµµ ÀÖ¾î¾ß ÇÑ´Ù.
-					if(hasIndex(detectArr, 3)) //Á¶°Ç 5. 3ÀÌ ÇÏ³ª¶óµµ ÀÖ¾î¾ß ÇÑ´Ù.
+		if (!hasIndex(detectArr, 0)) { //ì¡°ê±´ 2. ì£¼ë³€ì— 0ì´ ìˆìœ¼ë©´ ì•ˆëœë‹¤.
+			if(hasIndex(detectArr, 1)) { //ì¡°ê±´ 3. 1ì´ í•˜ë‚˜ë¼ë„ ìˆì–´ì•¼ í•œë‹¤.
+				if(hasIndex(detectArr, 2)) { //ì¡°ê±´ 4. 2ê°€ í•˜ë‚˜ë¼ë„ ìˆì–´ì•¼ í•œë‹¤.
+					if(hasIndex(detectArr, 3)) //ì¡°ê±´ 5. 3ì´ í•˜ë‚˜ë¼ë„ ìˆì–´ì•¼ í•œë‹¤.
 						return true;
 				}
 			}
