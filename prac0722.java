@@ -10,31 +10,22 @@ public class prac0722 {
 	   static int count;
 	   public static void main(String args[]) {
 	      
-	      /* ÀÔ·Â¹Þ´Â ºÎºÐ */
+	      /* ìž…ë ¥ë°›ëŠ” ë¶€ë¶„ */
 	      Scanner sc = new Scanner(System.in);
 	      T = sc.nextInt();
 	      result = new int[T];
-	      for(int iter=0; iter<T; iter++) { //Å×½ºÆ® ÄÉÀÌ½º T¸¸Å­ ÀÔ·Â¹ÞÀ½
+	      for(int iter=0; iter<T; iter++) { //í…ŒìŠ¤íŠ¸ ì¼€ì´ìŠ¤ Të§Œí¼ ìž…ë ¥ë°›ìŒ
 	    	  N = sc.nextInt();      S = sc.nextInt();
 	          J = sc.nextInt();      K = sc.nextInt();
-	          if (N<10 || N>10000 || J<0 || J>10000 
-	        		  || S<1 || S>N || K<1 || K>1000) {
-	             System.out.println("(1) NÀº 10 ÀÌ»ó, 10000 ¹Ì¸¸ÀÇ ¼ö¸¸ °¡´ÉÇÕ´Ï´Ù.\n"
-	                   + "(2) S´Â 1 ÀÌ»ó N ÀÌÇÏÀÇ ¼ö¸¸ °¡´ÉÇÕ´Ï´Ù.\n"
-	                   + "(3) J´Â 0 ÀÌ»ó 10000 ÀÌÇÏÀÇ ¼ö¸¸ °¡´ÉÇÕ´Ï´Ù.\n"
-	                   + "(4) K´Â 1 ÀÌ»ó 1000 ÀÌÇÏÀÇ ¼ö¸¸ °¡´ÉÇÕ´Ï´Ù.\n"
-	                   + "(5) À§ Á¶°Ç Áß ÇÏ³ª ÀÌ»óÀÇ Á¶°Ç¿¡ ¾î±ß³ª°Ô ÀÔ·ÂÇß½À´Ï´Ù.\n ½Ã½ºÅÛÀ» Á¾·áÇÕ´Ï´Ù.\n");
-	             System.exit(0);
-	          }
-	          
+	                
 	          restPg = new int[K];
-	          for(int i=0; i<K; i++) { //½¬¾î°¡´Â ÆäÀÌÁö ¾îµð¾îµðÀÎÁö ÀÔ·Â¹ÞÀ½
+	          for(int i=0; i<K; i++) { //ì‰¬ì–´ê°€ëŠ” íŽ˜ì´ì§€ ì–´ë””ì–´ë””ì¸ì§€ ìž…ë ¥ë°›ìŒ
 	        	  restPg[i] = sc.nextInt();
 	          }
 	          
-	          int len = (N-S)/(J+1) + 1; //Á¢ÇÏ´Â ÆäÀÌÁöÀÇ °¹¼ö
+	          int len = (N-S)/(J+1) + 1; //ì ‘í•˜ëŠ” íŽ˜ì´ì§€ì˜ ê°¯ìˆ˜
 	          goingPg = new int[len];
-	          for(int i=0; i<len && S<=N; i++) { //°ÅÃÄ°¡´Â ¸ðµç ÆäÀÌÁö ¾îµð¾îµðÀÎÁö ÀÔ·Â¹ÞÀ½
+	          for(int i=0; i<len && S<=N; i++) { //ê±°ì³ê°€ëŠ” ëª¨ë“  íŽ˜ì´ì§€ ì–´ë””ì–´ë””ì¸ì§€ ìž…ë ¥ë°›ìŒ
 	        	  goingPg[i] = S;
 	        	  S = S + (J+1);
 	          }
